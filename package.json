@@ -1,11 +1,12 @@
 {
-  "name": "tonline-fed-test",
+  "name": "mbadadh-fed-test",
   "version": "1.0.0",
   "description": "Front-end Developer Test for Target Australia applicants",
   "main": "index.js",
   "repository": "https://github.com/NickIannelli/tonline-fed-test",
   "scripts": {
     "lint": "eslint src",
+    "start": "webpack-dev-server",
     "lint:fix": "eslint --fix src",
     "predist": "rm -rf ./dist",
     "dist": "cross-env NODE_ENV=production webpack --config=./webpack.config.babel.js",
