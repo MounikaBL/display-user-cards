@@ -90,6 +90,20 @@ const images = {
 	}
 };
 
+const css = {
+	test: /\.css$/i,
+	use: ['style-loader', 'css-loader']
+}
+
+const files = {
+	test: /\.(png|jpe?g|gif)$/i,
+	use: [
+		{
+			loader: 'file-loader',
+		},
+	],
+}
+
 export const devPlugins = [
 	new webpack.HotModuleReplacementPlugin(),
 	new webpack.DefinePlugin({
@@ -110,7 +124,7 @@ const plugins = [
 const prdPlugins = [
 	new webpack.DefinePlugin({
 		'process.env': {
-			NODE_ENV: JSON.stringify('production')
+			NODE_ENV: JSON.stringify('development')
 		}
 	}),
 	new ManifestPlugin({
@@ -147,7 +161,7 @@ const defaultConfig = {
 		}
 	},
 	module: {
-		rules: [js, svg, images]
+		rules: [js, svg, images, css, files]
 	},
 	optimization: {
 		splitChunks: {
@@ -181,7 +195,7 @@ const devConfig = {
 };
 const prdConfig = {
 	...defaultConfig,
-	mode: 'production',
+	mode: 'development',
 	plugins: [...prdPlugins, ...plugins],
 	optimization: { ...defaultConfig.optimization, minimize: true, minimizer: [new TerserPlugin()] }
 };
