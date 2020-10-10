@@ -5,6 +5,12 @@ export const userActions = {
     getUsers,
 };
 
+/**
+ * @name getUsers
+ * @description Action creator to fetch the users data.
+ * @params count: Users count
+ * @return users Object
+ */
 function getUsers(count) {
     return dispatch => {
         dispatch(request());
