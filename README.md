@@ -22,3 +22,6 @@ You can also copy and paste the below URL in the browser to run the app.
 ```
 https://localhost:8008  or https://127.0.0.1:8008
 ```
+## Demo
+
+![gif](https://github.com/MounikaBL/mbadadh-fed-test/blob/master/src/components/gif/DisplayUsersAPP.gif)
